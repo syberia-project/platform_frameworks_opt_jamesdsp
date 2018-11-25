@@ -21,4 +21,7 @@ LOCAL_SRC_FILES := \
 	valve/12ax7amp/Tube.c \
 	valve/12ax7amp/wdfcircuits_triode.c
 
+LOCAL_CPPFLAGS += -Wno-unused-parameter
+LOCAL_CFLAGS += -Wno-unused-parameter
+
 include $(BUILD_SHARED_LIBRARY)
