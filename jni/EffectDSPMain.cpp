@@ -18,9 +18,8 @@ typedef struct
 const double interpFreq[NUM_BANDS] = { 25.0, 40.0, 63.0, 100.0, 160.0, 250.0, 400.0, 630.0, 1000.0, 1600.0, 2500.0, 4000.0, 6300.0, 10000.0, 16000.0 };
 
 EffectDSPMain::EffectDSPMain()
-	: DSPbufferLength(1024), inOutRWPosition(0), equalizerEnabled(0), ramp(1.0), pregain(12.0), threshold(-60.0), knee(30.0), ratio(12.0), attack(0.001), release(0.24), isBenchData(0), mPreset(0), reverbEnabled(0)
-	, mMatrixMCoeff(1.0), mMatrixSCoeff(1.0), bassBoostLp(0), FIREq(0), convolver(0), fullStereoConvolver(0), sosCount(0), resampledSOSCount(0), usedSOSCount(0), df441(0), df48(0), dfResampled(0)
-	, tempImpulseIncoming(0), tempImpulsedouble(0), finalImpulse(0), convolverReady(-1), bassLpReady(-1), analogModelEnable(0), tubedrive(2.0), eqFilterType(0), arbEq(0), xaxis(0), yaxis(0), eqFIRReady(0)
+	: df441(0), df48(0), dfResampled(0), sosCount(0), resampledSOSCount(0), usedSOSCount(0)
+	, DSPbufferLength(1024), inOutRWPosition(0), finalImpulse(0), tempImpulsedouble(0), tempImpulseIncoming(0), ramp(1.0), bassBoostLp(0), convolver(0), fullStereoConvolver(0), arbEq(0), xaxis(0), yaxis(0), FIREq(0), pregain(12.0), threshold(-60.0), knee(30.0), ratio(12.0), attack(0.001), release(0.24), tubedrive(2.0), mMatrixSCoeff(1.0), eqFilterType(0), equalizerEnabled(0), reverbEnabled(0), convolverReady(-1), bassLpReady(-1), eqFIRReady(0), analogModelEnable(0), mPreset(0), isBenchData(0)
 {
 	double c0[12] = { 2.138018534150542e-5, 4.0608501987194246e-5, 7.950414700590711e-5, 1.4049065318523225e-4, 2.988065284903209e-4, 0.0013061668170781858, 0.0036204239724680425, 0.008959629624060151, 0.027083658741258742, 0.08156916666666666, 0.1978822177777778, 0.4410733777777778 };
 	double c1[12] = { 5.88199398839289e-6, 1.1786813951189911e-5, 2.5600214528512222e-5, 8.53041086120132e-5, 2.656291374239004e-4, 5.047717001008378e-4, 8.214255850540808e-4, 0.0016754651127819551, 0.0033478867132867136, 0.006705333333333334, 0.013496382222222221, 0.02673028888888889 };
