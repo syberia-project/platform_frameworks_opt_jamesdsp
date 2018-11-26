@@ -4,6 +4,8 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libjamesdsp
 
+LOCAL_VENDOR_MODULE := true
+
 LOCAL_SRC_FILES := \
 	kissfft/kiss_fft.c \
 	kissfft/kiss_fftr.c \
