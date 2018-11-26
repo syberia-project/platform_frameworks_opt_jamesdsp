@@ -89,7 +89,7 @@ double DFFIRProcess(DFFIR *fir, double x)
 		fir->pos = 0;
 	return y;
 }
-inline void hcPut1Stage(HConv1Stage1x1 *filter, double *x)
+static inline void hcPut1Stage(HConv1Stage1x1 *filter, double *x)
 {
 	int j, flen, size;
 	flen = filter->framelength;
@@ -132,7 +132,7 @@ void hcProcess1Stage(HConv1Stage1x1 *filter)
 	}
 	filter->step = (filter->step + 1) % filter->maxstep;
 }
-inline void hcGet1Stage(HConv1Stage1x1 *filter, double *y)
+static inline void hcGet1Stage(HConv1Stage1x1 *filter, double *y)
 {
 	int flen, mpos;
 	double *out;
