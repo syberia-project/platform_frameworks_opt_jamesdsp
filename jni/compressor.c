@@ -80,8 +80,8 @@ void sf_advancecomp(sf_compressor_state_st *state, int rate, double pregain, dou
 #endif
     // calculate knee curve parameters
     double k = 5.0; // initial guess
-    double kneedboffset;
-    double linearthresholdknee;
+    double kneedboffset = 0.0;
+    double linearthresholdknee = 0.0;
     if (knee > 0.0)  // if a knee exists, search for a good k value
     {
         double xknee = db2lin(threshold + knee);
