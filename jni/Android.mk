@@ -5,6 +5,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libjamesdsp
 
 LOCAL_VENDOR_MODULE := true
+LOCAL_SDCLANG := false
 LOCAL_MODULE_RELATIVE_PATH := soundfx
 
 LOCAL_SRC_FILES := \
